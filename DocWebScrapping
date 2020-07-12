@@ -1,0 +1,21 @@
+##bash
+---- Web Scrapping ----
+
+1. Make a script invokable via bash, accepting args passed or take from clipboard
+>>> import webbrowser
+>>> webbrowser.open('https://inventwithpython.com/')
+
+- To open the browser 		-> webbrowser package
+- To push command line args -> sys package
+- To copy from clipboard 	-> pyperclip
+
+- To execute scripts through terminal -> add "$@" at the end of the command
+##bash
+
+- The script
+pushit.sh
+#! /bin/bash
+chmod 777 /niharFOlder/nihar/Learning/learning-basics/Python/NewStartCompleteImpl/OpenMapsAndGoToAddress.py
+python3 /niharFOlder/nihar/Learning/learning-basics/Python/NewStartCompleteImpl/OpenMapsAndGoToAddress.py "$@"
+
+- invoe by bash pushit.sh arg1 arg2
