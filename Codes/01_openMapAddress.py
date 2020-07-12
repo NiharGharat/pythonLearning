@@ -1,9 +1,13 @@
-import webbrowser, sys
+import webbrowser, sys, pyperclip
 
+# Either copy the address and invoke the script, or pass args to the excuting script named pushit
 print(sys.argv)
 address = ""
 if (len(sys.argv)) > 1:
     address = " ".join(sys.argv[1:])
+else:
+    print("For clipboard one")
+    address = pyperclip.paste()
 
 print("Join address created was " + address)
 

@@ -15,7 +15,14 @@
 - The script
 pushit.sh
 #! /bin/bash
-chmod 777 /niharFOlder/nihar/Learning/learning-basics/Python/NewStartCompleteImpl/OpenMapsAndGoToAddress.py
-python3 /niharFOlder/nihar/Learning/learning-basics/Python/NewStartCompleteImpl/OpenMapsAndGoToAddress.py "$@"
+# get the current directory
+DIR="$(dirname "${BASH_SOURCE[0]}")"  # get the directory name
+DIR="$(realpath "${DIR}")"    # resolve its full path if need be
+echo $DIR
+python3 $DIR/Codes/01_openMapAddress.py "$@"
 
-- invoe by bash pushit.sh arg1 arg2
+- invoke by bash pushit.sh arg1 arg2
+- eg bash pushit.sh "870 Valencia St, San Francisco, CA 94110"
+
+OR use pyperclip, keep address copied
+- bash pushit.sh
