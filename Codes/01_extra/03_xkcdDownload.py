@@ -16,8 +16,12 @@ currentDir = os.getcwd()
 if not os.path.exists(currentDir + "/dumpFolder/"):
     os.makedirs(currentDir + "/dumpFolder/")
 
-imageFile = open(currentDir + "/dumpFolder/" + 'xkcd.png', 'wb')
+imageFile = open(currentDir + "/dumpFolder/" + os.path.basename(comicUrl), 'wb')
 for chunk in res.iter_content(10000):
     imageFile.write(chunk)
 
 imageFile.close()
+
+# Highlights
+# 1. Using css selector to get specific tag, also getting the name of the file using os module
+# 2. Downloading an image file, using chunk writer to write the image in current directory
